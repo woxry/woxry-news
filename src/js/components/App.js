@@ -1,24 +1,22 @@
 // src/js/components/App.js
 import React from "react";
-import List from "./List/List";
-import Form from "./Form/Form";
-import News from "./News/News";
+import Home from "../pages/Home/Home";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 const App = () => (
-  <div>
+  <Router>
     <div>
-      <h2>News</h2>
-      <List />
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
     </div>
-    <div>
-      <h2>Add some news</h2>
-      <Form />
-    </div>
-    <div>
-      <h2>API posts</h2>
-      <News />
-    </div>
-  </div>
+  </Router>
 );
 
 export default App;

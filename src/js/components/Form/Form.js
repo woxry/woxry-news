@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addNews } from "../../actions/index";
+import { addNews } from "../../actions/news";
 
 function mapDispatchToProps(dispatch) {
   return {

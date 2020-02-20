@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getNews } from "../../actions/index";
+import { getNews } from "../../actions/news";
 
 export class Post extends Component {
   //constructor(props) {
