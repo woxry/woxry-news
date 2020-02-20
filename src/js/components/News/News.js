@@ -8,15 +8,18 @@ export class Post extends Component {
   //}
 
   componentDidMount() {
-    this.props.getNews();
+    this.props.getNews(2, 'reactJS');
   }
 
 
   render() {
+    const { data } = this.props;
 
+    console.log(data);
+  
     return (
       <ul>
-        {this.props.data[0] && this.props.data[0].articles.map(el => (
+        {data[0] && data[0].articles.map(el => (
           <li key={el.id}>{el.title}</li>
         ))}
       </ul>
