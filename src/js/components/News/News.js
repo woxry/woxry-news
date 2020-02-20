@@ -1,30 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getNews } from "../../actions/news";
 
-export class Post extends Component {
-  //constructor(props) {
-    //super(props);
-  //}
+function Post(props) {
+  const data = props.data;
 
-  componentDidMount() {
-    this.props.getNews(2, 'reactJS');
-  }
+  /* State related with filters */
+  const [page, setPage] = useState(1);
+  const [keyword, setKeyword] = useState('reactJS');
 
+  useEffect(() => {
+    props.getNews(page, keyword);
+  });
 
-  render() {
-    const { data } = this.props;
-
-    console.log(data);
-  
-    return (
-      <ul>
-        {data[0] && data[0].articles.map(el => (
-          <li key={el.id}>{el.title}</li>
-        ))}
-      </ul>
-    );
-  }
+  return (
+    <ul>
+      {data[0] && data[0].articles.map(el => (
+        <li key={el.id}>{el.title}</li>
+      ))}
+    </ul>
+  );
 }
 
 function mapStateToProps(state) {
