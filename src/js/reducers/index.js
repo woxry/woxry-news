@@ -1,8 +1,9 @@
-import { ADD_NEWS, NEWS_LOADED } from "../constants/action-types";
+import { ADD_NEWS, LOAD_NEWS, LOAD_POPULAR_NEWS } from "../constants/action-types";
 
 const initialState = {
 	news: [],
-	data: []
+  data: [],
+  topNews: []
 };
 
 function rootReducer(state = initialState, action) {
@@ -12,9 +13,15 @@ function rootReducer(state = initialState, action) {
     });
 	}
 	
-	if (action.type === NEWS_LOADED) {
+	if (action.type === LOAD_NEWS) {
     return Object.assign({}, state, {
       data: state.data.concat(action.payload)
+    });
+  }
+  
+  if (action.type === LOAD_POPULAR_NEWS) {
+    return Object.assign({}, state, {
+      topNews: state.topNews.concat(action.payload)
     });
 	}
 
