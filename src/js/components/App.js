@@ -1,5 +1,7 @@
 import React from "react";
 import Home from "../pages/Home/Home";
+import Header from "./Header/Header";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,6 +10,7 @@ import {
 
 const App = () => (
   <Router>
+    <Header />
     <div>
       <Switch>
         <Route path="/">

@@ -1,0 +1,21 @@
+
+@import '../../../variables.scss';
+
+/* Defining header styles */
+.header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  
+  .logoSection {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    img {
+      width: 100%;
+      max-width: 150px;
+    }
+  }  
+}

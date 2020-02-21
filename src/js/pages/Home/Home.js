@@ -6,7 +6,6 @@ import styles from './styles.module.scss';
 function Home(props) {
   return (
     <div className={styles.homeView}>
-      <h1>Woxry News</h1>
       <News />
     </div>
   );
